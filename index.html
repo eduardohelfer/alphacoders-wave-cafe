@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="css/tooplate-wave-cafe.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--
 Tooplate 2121 Wave Cafe
 https://www.tooplate.com/view/2121-wave-cafe
 -->
-    <!-- Programa Javascript de E-Commerce -->  
-    <script src="js/ecommerce.js" async></script>
+    <!-- Programa Javascript de E-Commerce 
+    <script src="js/ecommerce.js"></script> -->  
     <!-- tras consultar https://cybmeta.com/diferencia-async-y-defer pruego con tag async-->
+    <!-- aparentemente async no da suficiente tiempo para recolectar toda la base de datos de productos con la función collectData().  La solución fué trasladar el <script de ecommerce.js a la parte final de <body línea 503-->
 
 </head>
 <body>
+
+  <!-- Modal de la compra-->
+
+  <section class="modal">
+    <div class="modal__container">
+      <img height="300" src="img/222-1019-payung-pantai.svg" alt="beach drink">
+      <h2 class="motal__title">Gracias por tu compra</h2>
+      <p class="modal__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, magnam.</p>
+      <a href="#" class="modal__close">¡ Vuelve Pronto !</a>
+    </div>
+  </section>
+
   <div class="tm-container">
     <div class="tm-row">
       <!-- Site Header -->
@@ -94,13 +108,13 @@ https://www.tooplate.com/view/2121-wave-cafe
               </div>
               
 
-              <p>Incluye todos los impuestos de ley. </p>
+              <p>Includes all legal taxes. </p>
 
               <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0.00</span>
               </div>
-              <button id="btnPurchase" class="btn btn-purchase" type="button">PAY THIS ORDER</button>
+              <button id="btnPurchase" class="btn btn-purchase" type="button">PAY YOUR ORDER</button>
               <hr>          
             </section>
             <!--    End  Section  ORDER CART     -->
@@ -135,7 +149,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/iced-americano.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Iced Americano</h3><span class="tm-list-item-price shop-item-price">$10.25</span>
-                    <p class="tm-list-item-description">Here is a short description for the first item. Wave Cafe Template is provided by Tooplate.</p>
+                    <p class="tm-list-item-description shop-item-description">Handcrafted from our custom blend of beans with a super-smooth flavor.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder--> 
                   </div>
                 </div>
@@ -143,7 +157,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/iced-cappuccino.png" alt="Image" class="tm-list-item-img  shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Iced Cappuccino</h3><span class="tm-list-item-price shop-item-price">$12.50</span>
-                    <p class="tm-list-item-description">Here is a list of 4 items or add more. You can use this template for commercial purposes.</p>
+                    <p class="tm-list-item-description shop-item-description">Freshly brewed Cappuccino served chilled and sweetened over ice.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->  
                   </div>
                 </div>
@@ -151,7 +165,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/iced-espresso.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Iced Espresso</h3><span class="tm-list-item-price shop-item-price">$14.25</span>
-                    <p class="tm-list-item-description">You are not permitted to redistribute this template ZIP file on any other template websites.</p>
+                    <p class="tm-list-item-description shop-item-description">Our smooth Espresso over ice boasts rich flavor and caramelly sweetness.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->  
                   </div>
                 </div>
@@ -159,7 +173,8 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/iced-latte.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Iced Latte</h3><span class="tm-list-item-price shop-item-price">$11.50</span>
-                    <p class="tm-list-item-description">Contents are organized into 3 tabs. Please <a href="https://www.tooplate.com/contact" rel="nofollow" target="_parent">contact Tooplate</a> if you have anything to ask.</p>
+                    <p class="tm-list-item-description shop-item-description">Our dark, rich espresso combined with milk and served over ice. A perfect milk-forward cooldown. </p>
+                    <!-- <a href="https://www.tooplate.com/contact" rel="nofollow" target="_parent">contact Tooplate</a> if you have anything to ask. -->
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->  
                   </div>
                 </div> 
@@ -174,7 +189,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/hot-americano.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Hot Americano</h3><span class="tm-list-item-price shop-item-price">$8.50</span>
-                    <p class="tm-list-item-description">Here is a short description for the item along with a squared thumbnail.</p>
+                    <p class="tm-list-item-description shop-item-description">Espresso shots topped with hot water culminating in this wonderfully rich cup with depth and nuance.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                
                   </div>
                 </div>
@@ -182,7 +197,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/hot-cappuccino.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Hot Cappuccino</h3><span class="tm-list-item-price shop-item-price">$9.50</span>
-                    <p class="tm-list-item-description">Here is a list of 4 items that can add more as you need. Only content area will be scrolling.</p>
+                    <p class="tm-list-item-description shop-item-description">Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                      
                   </div>
                 </div>
@@ -190,7 +205,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/hot-espresso.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Hot Espresso</h3><span class="tm-list-item-price shop-item-price">$7.50</span>
-                    <p class="tm-list-item-description">Left side logo and main menu are fixed. The video background is fixed.</p>
+                    <p class="tm-list-item-description shop-item-description">Smooth signature Espresso with rich flavor and caramelly sweetness.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                
                   </div>
                 </div>
@@ -198,11 +213,10 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/hot-latte.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Hot Latte</h3><span class="tm-list-item-price shop-item-price">$6.50</span>
-                    <p class="tm-list-item-description">Page contents are organized into 3 tabs to show different lists of items.</p>
+                    <p class="tm-list-item-description shop-item-description">Our dark, rich espresso balanced with steamed milk and a light layer of foam.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                
                   </div>
                 </div>
-                         
               </div>
             </div>
 
@@ -212,7 +226,7 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/smoothie-1.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Strawberry Smoothie</h3><span class="tm-list-item-price shop-item-price">$12.50</span>
-                    <p class="tm-list-item-description">Here is a short description for the item along with a squared thumbnail.</p>
+                    <p class="tm-list-item-description shop-item-description">Perfect conbination of strawberries mixed with delicious yogurt and ice.</p>
                     <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->               
                   </div>
                 </div>
@@ -220,24 +234,25 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <img src="img/smoothie-2.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Red Berry Smoothie</h3><span class="tm-list-item-price shop-item-price">$14.50</span>
-                    <p class="tm-list-item-description">Here is a list of 4 items or add more. You can use this template for commercial purposes.</p> 
-                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                    
+                    <p class="tm-list-item-description shop-item-description">Delicious combination of red fruit purees mixed with yogurt and ice.</p> 
+                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>                   
                   </div>
                 </div>
-                <div class="tm-list-item listItem">           
+                <div class="tm-list-item listItem">          
                   <img src="img/smoothie-3.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Pineapple Smoothie</h3><span class="tm-list-item-price shop-item-price">$16.50</span>
-                    <p class="tm-list-item-description">Left side logo and main menu are fixed. The video background is fixed.</p>
-                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->                
+                    <p class="tm-list-item-description shop-item-description">Frozen pineapple mixed with yogurt will make you feel like you're on a tropical island.</p> 
+                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>                   
                   </div>
                 </div>
+
                 <div class="tm-list-item listItem">           
                   <img src="img/smoothie-4.png" alt="Image" class="tm-list-item-img shop-item-image">
                   <div class="tm-black-bg tm-list-item-text">
                     <h3 class="tm-list-item-name shop-item-title">Spinach Smoothie</h3><span class="tm-list-item-price shop-item-price">$18.50</span>
-                    <p class="tm-list-item-description">You are not allowed to redistribute the template ZIP file on other template sites.</p> 
-                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->           
+                    <p class="tm-list-item-description shop-item-description">Go green and try one, ideal for packing in extra veg, flavour and nutrients in a flash.</p> 
+                    <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>           
                   </div>
                 </div>              
               </div>
@@ -252,8 +267,8 @@ https://www.tooplate.com/view/2121-wave-cafe
               <div class="tm-list-item tm-list-item-2">                
                 <img src="img/about-1.png" alt="Image" class="tm-list-item-img tm-list-item-img-big">
                 <div class="tm-list-item-text-2">
-                  <p>Wave Cafe is a one-page video background HTML CSS template from Tooplate. You can use this for your business websites.</p>
-                  <p>You can also use this for your client websites which you get paid for your website services. Please tell your friends about us.</p>
+                  <p>Wave Coffee is a coffee shop with a bakery that takes its inspiration from a shared passion for coffee.</p>
+                  <p>But not everything will be black gold. We also love, of course, to eat. At Wave Coffee we go from the sweetest to the saltiest.</p>
                 </div>                
               </div>
             </div>
@@ -261,11 +276,11 @@ https://www.tooplate.com/view/2121-wave-cafe
               <div class="tm-list-item tm-list-item-2">                
                 <div class="tm-list-item-text-2">
                   <h2 class="tm-text-primary">How we began</h2>
-                  <p>If you wish to support us, please contact Tooplate. Thank you. Duis bibendum erat nec ipsum consectetur sodales.</p>                  
+                  <p>We consider 2020 as our opening year, the journey that has taken us here began some time ago, merging knowledge and passion to offer the best of our experience: the trade learned and perfected thanks to various trips, courses, people, books, but above all, with the work of each day.</p>                  
                 </div>                
                 <img src="img/about-2.png" alt="Image" class="tm-list-item-img tm-list-item-img-big tm-img-right">                
               </div>
-              <p>Donec non urna elit. Quisque ut magna in dui mattis iaculis eu finibus metus. Suspendisse vel mi a lacus finibus vehicula vel ut diam. Nam pellentesque, mi quis ullamcorper.</p>
+              <p>We are passionate about coffee, we love it, and we are happy to share it with you.</p>
             </div>
           </div>
           <!-- end About Us Page -->
@@ -276,51 +291,53 @@ https://www.tooplate.com/view/2121-wave-cafe
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-01.jpg" alt="Image" class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Special One</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">Here is a short text description for the first special item. You are not allowed to redistribute this template ZIP file.</p>
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Pineapple Orange Lemonade</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Tropical flavors of pineapple and orange combine with refreshing lemonade to create a taste of sunshine in a cup.</p>
                   <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->  
                 </div>
               </div>
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-02.jpg" alt="Image" class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Second Item</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">You are allowed to download, modify and use this template for your commercial or non-commercial websites.</p>
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Butter Croissant</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Classic butter croissant with soft, flaky layers and a golden-brown crust.</p>
                   <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->   
                 </div>
               </div>
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-03.jpg" alt="Image" class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Third Special Item</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">Pellentesque in ultrices mi, quis mollis nulla. Quisque sed commodo est, quis tincidunt nunc.</p>
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Special Sandwinch</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Delicious meat with bacon, topped with a melted slice of sharp Cheddar cheese—all on our signature croissant bun.</p>
                   <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->   
                 </div>
               </div>
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-04.jpg" alt="Image"  class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Special Item Fourth</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">Vivamus finibus nulla sed metus sagittis, sed ultrices magna aliquam. Mauris fermentum.</p>
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Strawberry Pavlova</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Beautiful strawberry pavlova with a crispy outer and soft centre.</p>
                   <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->   
                 </div>
               </div>      
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-05.jpg" alt="Image"  class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Sixth Sense</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">Here is a short text description for sixth item. This text is four lines.</p>
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Strawberry and Mint Lemonade</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Sweet strawberry and mint notes with the delightful zing of lemonade, served over ice with freeze-dried strawberry pieces.</p>
                   <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->  
                 </div>
               </div>
               <div class="tm-black-bg tm-special-item listItem">
                 <img src="img/special-06.jpg" alt="Image"  class="shop-item-image">
                 <div class="tm-special-item-description">
-                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Seventh Item</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
-                  <p class="tm-special-item-text">Curabitur eget erat sit amet sapien aliquet vulputate quis sed arcu.</p>
-                  <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  <!--Botón addToOrder-->   
+                  <h2 class="tm-text-primary tm-special-item-title shop-item-title">Spinach, Feta & Meat Wrap</h2><span class="tm-list-item-price shop-item-price">$9.50</span>
+                  <p class="tm-special-item-text shop-item-description">Delicious meat combined with spinach, feta cheese and sun-dried tomato cream cheese inside a whole-wheat wrap.</p>
+                  <button class="btn add-item-btn addToOrder" type="button">Add to Order</button>  
                 </div>
-              </div>                      
+              </div>
+
+            </div>                      
             </div>            
           </div>
           <!-- end Special Items Page -->
@@ -329,7 +346,8 @@ https://www.tooplate.com/view/2121-wave-cafe
           <div id="contact" class="tm-page-content">
             <div class="tm-black-bg tm-contact-text-container">
               <h2 class="tm-text-primary">Contact Wave</h2>
-              <p>Wave Cafe Template has a video background. You can use this layout for your websites. Please contact Tooplate's Facebook page. Tell your friends about our website.</p>
+              <p>Leave us your messagge <br>
+                We would love to read you!</p>
             </div>
             <div class="tm-black-bg tm-contact-form-container tm-align-right">
               <form action="" method="POST" id="contact-form">
@@ -343,8 +361,8 @@ https://www.tooplate.com/view/2121-wave-cafe
                   <textarea rows="6" name="message" class="tm-form-control" placeholder="Message" required=""></textarea>
                 </div>        
                 <div>
-                  <button type="submit" class="tm-btn-primary tm-align-right">
-                    Submit
+                  <button type="submit" class="tm-btn-primary tm-align-right" onclick="mostrar()">
+                    Send
                   </button>
                 </div>
               </form>
@@ -365,6 +383,11 @@ https://www.tooplate.com/view/2121-wave-cafe
     | Development: <a href="https://discord.gg/VhdaBDvR" class="tm-footer-link" rel="sponsored" target="_parent">Team Alpha Coders</a></p>
   </footer>
     
+
+<textarea id="codeUpdate" rows="20" cols="100">Base de datos (Array de objetos) conteniendo la información de productos a partir del código HTML
+-------------------------------------------------------------------------------------------------
+</textarea>
+
   <!-- Background video -->
   <div class="tm-video-wrapper">
       <i id="tm-video-control-button" class="fas fa-pause"></i>
@@ -372,6 +395,9 @@ https://www.tooplate.com/view/2121-wave-cafe
           <source src="video/wave-cafe-video-bg.mp4" type="video/mp4">
       </video>
   </div>
+
+
+
 
 
 <script src="js/jquery-3.4.1.min.js"></script> 
@@ -477,10 +503,15 @@ https://www.tooplate.com/view/2121-wave-cafe
         }
       });
     });
+
+
+
+    function mostrar() {
+      swal('Sending', 'messagge', 'success')
+    }
       
   </script>
 
-
-
+  <script src="js/ecommerce.js"></script>
 </body>
 </html>
