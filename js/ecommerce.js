@@ -142,10 +142,10 @@ const openModal = document.querySelector('.btn-purchase');
 const modal = document.querySelector('.modal');
 const closeModal = document.querySelector('.modal__close')
 
-openModal.addEventListener('click', (e) => {
-  e.preventDefault();
-  modal.classList.add('modal--show');
-})
+// openModal.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   modal.classList.add('modal--show');
+// })
 
 closeModal.addEventListener('click', (e) => {
   e.preventDefault();
@@ -214,10 +214,19 @@ function codeUpdate (productDb){  // Recibe el Array de Objetos y lo despliega c
 
 function purchaseClicked () {
   let resultado = updateCartTotal()
+  console.log(resultado)
+  if (resultado < .001) {
+    return
+  }
   let allCartEntries = document.querySelectorAll('.cart-row')
   for (let i = 0; i < allCartEntries.length; i++) {
     allCartEntries[i].remove()
   }
+
+  openModal.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('modal--show');
+  })
   document.querySelector('.cart-total-price').innerText = "$" + "0.00"
   // console.log(resultado)
   // window.alert(`Tu compra total fue ${resultado}`)
